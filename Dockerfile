@@ -78,7 +78,7 @@ COPY ./config/redis.conf /etc/redis.conf
 
 #Build gsa
 RUN cd /usr/src && \
-	git clone -b gsa-8.0 https://github.com/greenbone/gsa.git && \
+	git clone -b gsa-8.0 https://github.com/bjoernricks/gsa.git && \
 	cd gsa && \
 	mkdir build && \
 	cd build && \
