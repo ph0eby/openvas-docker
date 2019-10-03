@@ -1,7 +1,8 @@
 FROM debian:stretch
 
 ENV DEBIAN_FRONTEND=noninteractive \
-    OV_PASSWORD=admin
+    OV_PASSWORD=admin \
+	PUBLIC_HOSTNAME=openvas
 
 #Install Prerequisites
 RUN apt-get update -y && \
@@ -78,7 +79,7 @@ COPY ./config/redis.conf /etc/redis.conf
 
 #Build gsa
 RUN cd /usr/src && \
-	git clone -b gsa-8.0 https://github.com/bjoernricks/gsa.git && \
+	git clone -b v8.0.1 https://github.com/greenbone/gsa.git && \
 	cd gsa && \
 	mkdir build && \
 	cd build && \
